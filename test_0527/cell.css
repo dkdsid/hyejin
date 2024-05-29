@@ -1,0 +1,15 @@
+/* 본고딕을 웹폰트로 선언하는 css 불러오기 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+body{
+    font-family: "Noto Sans KR", sans-serif;
+}
+   h1 {
+    color: #20c85a;
+    font-size: 24px;
+   }
+.title {
+    font-size: 60px;
+    color: #1d1d1d;
+    font-weight: 700;
+}
