@@ -12,6 +12,10 @@ html, body {
     color: #3d3d3d;/* 글자 색상 */
     word-break: keep-all;/* 단어별로 줄바꿈 */
 }
+/*홈페이지 전체를 감싸는 요소 - 가로스크롤바가 생겼을 때 배경이 짤리는 현상을 막음*/
+#wrap {
+    min-width: 1260px;
+}
 /* 홈페이지의 넓이를 제한하고 가운데정렬*/
 .wrapper {
     width: 1260px;
@@ -38,7 +42,7 @@ header .gnb ul li a {
     padding: 40px 25px 35px 25px;
     display:  block; /* padding 값을 적용하기 위해서 - a가 인라인태그라 적용이 안됨 */
 }
-/*a태그에 마우스를 올렸을 때 스타일*/
+/* a태그에 마우스를 올렸을 때 스타일 */
 header .gnb ul li a:hover {
     color: #2D2B76;
     font-weight: 700;
@@ -51,19 +55,142 @@ header .gnb ul li a:hover {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    /*background 속성을 한번에 선언하는 방법 */
+    /* background 속성을 한번에 선언하는 방법 */
     background: url(../images/visual.png) no-repeat center center / cover;
     color: #fff;
+    text-align: center;
 }
 .visual strong {
     padding: 326px 0 0 0;
-    display: block; /*인라인요소는 여백이 적용 X */
+    display: block; /* 인라인요소는 여백이 적용 X */
 }
 .visual h2 {
     font-size: 40px;
     letter-spacing: -0.02em;
     line-height: 1.1;
+    margin: 8px 0 0 0;
 }
 .visual h2 em {
+    font-weight: 700;
+}
+
+.introduce .art {
+    display: flex;
+    justify-content:  center;
+    margin: 128px 0  76px 0;
+}
+.introduce .scholarship {
+    display:  flex;
+    justify-content: center;
+    margin: 0 0 138px 0;
+    text-align: right;
+}
+.introduce .art .txt {
+    margin: 0 0 0 161px;
+    width: 511px;
+}
+.introduce .scholarship .txt {
+    margin: 0 161px  0 0;
+    width: 511px;
+}
+.introduce h2 {
+    font-size: 35px;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 63px 0 0 0;
+}
+.introduce strong {
+    font-weight: 700;
+    letter-spacing:  -0.02em;
+    color: #1d1d1d;
+    line-height: 1.3;
+    font-size: 18px;
+    margin: 10px 0 21px 0;
+    display: block;/* margin을 적용하게 하는 방법 */
+}
+.introduce .btn {
+    display: flex;
+    /*a태그는 원래 좌우로 배치됨
+    하지만 사이사이 여백이 발생
+    여백을 삭제하려면 flex로 좌우로 배치*/
+    margin: 21px 0 0 0;
+}
+.introduce .scholarship .btn {
+    justify-content: flex-end;
+    /*flex로 배치간 버튼을 오른쪽 정렬
+    text- align 영향을 받지 않음*/
+}
+.introduce .btn a {
+    border:  1px solid #666666;
+    padding:  6px 20px;
+    display:  block; /* padding 값을 적용하기 위해서 */
+    margin: 0 10px 0 0;
+}
+/* btn 클래스 안에 있는 a중에서 마지막 a */
+.introduce .btn a:last-child {
+    margin-right: 0;
+}
+.introduce .btn a:hover {
+    /*오버전에 botder가 있었다면 border를 주는 것이 사이즈가 유지됨*/
+    border:  1px solid #2D2B76;
+    background-color: #2D2B76;
+    color: #fff;
+}
+
+.promotion {
+    /*배경보다 promotion 콘텐츠 길이가 더 길다 배경의 위치를 정확하게 - 가운데 상단
+    background-size 주면 안됨 디자인한 사이대로 들어가야 하니까*/
+    background: url(../images/promotion_bg.png) no-repeat center top;
+}
+.promotion .news {
+    color: rgba(255,255,255,0.8);
+    padding:  226px 0 128px 0;
+}
+.promotion .news .wrapper {
+    display:  flex;
+    justify-content: space-between;
+}
+.promotion .news .tit h2 {
+    font-size: 35px;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    color: #fff;
+}
+.promotion .news .tit p{
+    margin: 21px 0 24px 0;
+}
+.promotion .news .tit a {
+    border: 1px solid rgba(255,255,255,0.8);
+    padding:  6px 17px;
+    display: inline-block; /* inline 요소는 padding 적용 안됨 */
+}
+.promotion .news .tit a:hover {
+    border: 1px solid rgba(255,255,255,0.8);
+    background-color: rgba(255,255,255,0.8);
+    color: #2D2B76;
+}
+.promotion .list {
+    width: 647.5px; 
+}
+.promotion .list ul li {
+    border-top: 1px solid rgba(255,255,255,1)
+}
+.promotion .list ul li:last-child {
+    border-bottom: 1px solid rgba(255,255,255,1)
+}
+.promotion .list ul li a {
+    /* display:flex는 해당요소를 block요소로 만들어서 넓이가 100%로 만듬.*/
+    display: flex;
+    justify-content: space-between;
+    align-items:  center;/* 위아래 가운데 */
+    padding: 19px 20px;
+}
+.promotion .list ul li a strong {
+    font-size: 18px;
+    color: #fff;
+}
+/*a태그에 오버했을때 strong 태그는 */
+.promotion .list ul li a:hover strong {
     font-weight: 700;
 }
