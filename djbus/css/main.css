@@ -5,6 +5,7 @@
 모든태그를 감싸는 html body에 선언*/
 html, body {
     font-family: 'Pretendard', sans-serif;
+    /* font-family: "Noto Serif KR",Serif; */
     font-weight:  400;
     font-size: 15px;
     letter-spacing: 0em;/* 자간 */
@@ -160,16 +161,7 @@ header .gnb ul li a:hover {
 .promotion .news .tit p{
     margin: 21px 0 24px 0;
 }
-.promotion .news .tit a {
-    border: 1px solid rgba(255,255,255,0.8);
-    padding:  6px 17px;
-    display: inline-block; /* inline 요소는 padding 적용 안됨 */
-}
-.promotion .news .tit a:hover {
-    border: 1px solid rgba(255,255,255,0.8);
-    background-color: rgba(255,255,255,0.8);
-    color: #2D2B76;
-}
+
 .promotion .news .list {
     width: 647.5px; 
 }
@@ -193,6 +185,36 @@ header .gnb ul li a:hover {
 /*a태그에 오버했을때 strong 태그는 */
 .promotion .news .list ul li a:hover strong {
     font-weight: 700;
+}
+.promotion .news .wrapper {
+    position: relative;
+    /* more 정렬의 기준
+       more를 감싸는 wrapper를 기준으로 정렬
+       wrapper에promotion을 줘야함
+       promotion 속성값 중에서 유일하게
+       relative 값만이 요소에 아무런 영향을
+       끼치지않음*/
+}
+.promotion .news .more {
+    border: 1px solid rgba(255,255,255,0.8);
+    padding:  6px 17px;
+    display: inline-block; /* inline 요소는 padding 적용 안됨 */
+    position: absolute;
+    left: 0;
+    top: 100px;
+    /* position: absolute는 반드시
+    좌우위치 left right
+    위아래 위치 top bottom 값이 필수이고
+    이 값을 어디서부터 계산하는지
+    기준이 필요함
+    나를 감싸는 요소 중에서 position 속성을 갖은 
+    요소를 기준으로 정렬
+    ----.wrapper를 기준으로 정렬 */
+}
+.promotion .news .more:hover {
+    border: 1px solid rgba(255,255,255,0.8);
+    background-color: rgba(255,255,255,0.8);
+    color: #2D2B76;
 }
 .promotion .movie .tit h2 {
     font-size: 35px;
@@ -235,7 +257,7 @@ header .gnb ul li a:hover {
     font-weight:  700;
 }
 /* 마우스를 오버 
-   스타일이 변겨오디는 요소의 스타일이 정의된 선택자를 그대로 복사해야함
+   스타일이 변경되는 요소의 스타일이 정의된 선택자를 그대로 복사해야함
    만약에 그냥 body라던가 다른 스타일을 상속받은거면
    그냥 a에게 스타일을 주면 됨
  */
@@ -267,10 +289,10 @@ footer .f_nav ul li .privacy  {
 footer .f_info {
     margin: 28px 0 28px 0;
 }
-/* footer .f_info address, span 
-이렇게 선택자를 스면 footer 안에 f_info라는 클래스명을
-갖은 요소 안에 있는 address와 이 html내부의 모든 span가 
-되어버림 */
+    /* footer .f_info address, span 
+    이렇게 선택자를 쓰면 footer 안에 f_info라는 클래스명을
+    갖은 요소 안에 있는 address와 이 html내부의 모든 span가 
+    되어버림 */
 footer .f_info address,
 footer .f_info span {
     margin: 0 32px 8px 0;
@@ -280,4 +302,25 @@ footer .f_info span {
 }
 footer .copyright {
     color: rgba(255,255,255,0.5);
+}
+footer .wrapper {
+    /*footer .  family정렬의 기준*/
+    position: relative;
+}
+footer .family {
+    position: absolute;
+    right:  0;
+    top: 20px;
+    /* footer .wrapper 기준으로 정렬*/
+}
+footer .family button {
+    border: 1px solid rgba(255,255,255,0.8);
+    width: 164px;
+    height: 29px;
+    /* 원래 버튼 태그는 요소가 좌우에 가운데 위아래 가운데 정렬 */
+    display: flex;
+    justify-content: space-between;
+    /* 내부 두 요소를 좌우 끝단에 배치하기 위해서 */
+    align-items: center;/*위아래 가운데*/
+    padding: 0 14px;
 }
