@@ -35,3 +35,173 @@
                 margin: 0; /*pc버전에서 준 여백을 삭제하려면 0을 줌*/
             }
 }/*media*/
+
+.health {
+    background: url(../images/sound_bg.png) no-repeat center center /cover;
+    color: #fff;
+    text-align: center;
+    padding: 211px 0 205px 0;
+}
+.health h2 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 19px 0;
+}
+
+@media screen and (max-width:640px){
+    .health {
+        padding: 108px 0 108px 0;
+    }
+        .health h2 {
+            font-size: 30px;
+        }
+        .health p br{ /* 줄바꿈을 주던 태그를 삭제 */
+            display: none;
+        }
+ }/*media*/
+
+ .solution {
+    background: url(../images/sound_bg.png) no-repeat center center /cover;
+    color: #fff;
+    text-align: center;
+    padding: 211px 0 205px 0;
+}
+.solution h2 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 19px 0;
+}
+.solution p span {
+    display: block;/*줄바꿈*/
+
+}
+
+@media screen and (max-width:640px){
+    .solution {
+        padding: 108px 0 108px 0;
+    }
+        .solution h2 {
+            font-size: 30px;
+        }
+        .solution p br{ /* 줄바꿈을 주던 태그를 삭제 */
+            display: none;
+        }
+        .solution p span {
+            display: inline;/*줄바꿈 해제*/
+        
+        }
+ }/*media*/
+.story{
+    margin: 170px 0 0 0;
+}
+ .story .group1,
+ .story .group2 {
+    display: flex;
+    align-items: center;
+    /* txt와 photo를 위아래 가운데 정렬 (세로정렬)*/
+ }
+ .story .group2{
+    flex-direction:  row-reverse;/*좌우 순서역전*/
+ }
+ .story .txt {
+    width: 630px;
+    padding: 0 0 0 104px;
+ }
+ .story .txt strong {
+    font-weight: 700;
+ }
+ .story .txt h2 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #0B0B0B;
+    margin: 12px 0 14px 0;
+ }
+ .story .txt .more {
+    margin: 24px 0 0 0;
+ }
+ .story .txt .more a {
+    padding: 20px 155px 20px 20px;
+    background-color: #10B401;
+    color: #fff;
+    display: inline-block; /* padding 적용 */
+    position: relative;/*  after 정렬의 기준 */
+ }
+ .story .txt .more a::after {
+    position: absolute; /* a태그 기준으로 정렬 */
+    right: 20px;
+    top: 20px;
+    /*아이콘 같이 전체가 보여야하는 경우는 contain -이미지 안짤림
+      배경에 이미지를 넣은 경우는 cover - 이미지 짤림
+      둘다 영역에 크기에 맞춰서 배경이미지가 리사이즈됨*/
+    background: url(../images/more.svg) no-repeat center center / contain;
+    content: "";
+    height: 24px;
+    width: 24px;
+    display: block; /* 넓이와 높이를 적용시키려고 */
+    /*after, before 가상선택자는 반드시 content 속성을 줘야 나타남
+     넓이와 높이가 존재하지 않음
+     이미지를 배경으로 넣으려면 이미지 사이즈를 넓이와 높이로 지정해줘야함
+     위치가 태그의 시작위치 종료위치 맘대로 배치됨
+     내가 원하는 위치에 배치하려면 absolute 로 배치해야함.
+     그냥 before , after 가상선택자는 반드시 absolute를 준다고 생각하면 됨 */
+ }
+.story .photo {
+    font-size: 0;
+    line-height: 0;
+    /* 이미지 태그 하단에는 행간이 적용됨.
+    이걸 없애려면 이미지를 감싸는 태그에
+    글자크기와 행간을 0으로 줘야함*/
+}
+
+@media screen and (max-width:640px){
+            .story{
+                margin:0;
+            }
+            .story .group1,
+            .story .group2 {
+                display:block;
+                /*display :flex를 해제하기 위해서
+                display 속성 중에서 주기 적합한 값으로 대체*/
+                /*align-items center :--flex 일 때만 적용되는 속성 해제가 필요 x*/
+                align-items: center;
+                /* txt와 photo를 위아래 가운데 정렬 (세로정렬)*/
+            }
+            .story .group2{
+                flex-direction:  row-reverse; /*flex 일 때만 적용되는 속성 해제가 필요 x*/
+            }
+            .story .txt {
+                width: auto;/*넓이를 제한 한것 해제*/
+                padding: 0;
+                margin: 61px 0 59px 0;
+            }
+            .story .txt strong {
+                margin: 0 31.25% 0 0;
+                display: block;/*margin 적용*/
+            }
+            .story .txt strong br{
+                display: none;/* br로 줄바꿈한 것 삭제*/
+            }
+            .story .txt h2 {
+                font-size: 30px;
+                margin: 12px 0 14px 0;
+            }
+            .story .txt .more {
+                margin: 20px 0 0 0;
+            }
+            .story .txt .more a {
+                padding: 12px 155px 18px 20px;
+            }
+            .story .txt .more a::after {
+                right: 20px;
+                top: 20px;
+                height: 18px;
+                width: 18px;
+            }
+            .story .photo img {
+                width: 100%;/**/
+            }
+    
+}
