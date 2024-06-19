@@ -1,0 +1,31 @@
+@import url(default.css);
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 400;
+	font-display: swap;
+	src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff2) format('woff2'), url(../fonts/Pretendard-Regular.woff) format('woff');
+}
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 700;
+	font-display: swap;
+	src: local('Pretendard Bold'), url(../fonts/Pretendard-Bold.woff2) format('woff2'), url(../fonts/Pretendard-Bold.woff) format('woff');
+}
+
+html, body {
+    font-family: "Pretendard", sans-serif;
+    font-size: 15px; 
+    color: #1d1d1d; 
+    font-weight: 400; 
+    line-height: 0; 
+    letter-spacing: -5;
+    word-break: keep-all; 
+}
+#wrap { 
+    min-width: 1260px;
+}
+.wrapper { 
+    width: 1260px;
+    margin: 0 auto;
+}
