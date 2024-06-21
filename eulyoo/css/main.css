@@ -1,0 +1,277 @@
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+
+.visual ul li {
+    background-position:  center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 800px;
+    color: rgba(255,255,255,0.8);
+}
+.visual ul li.pop_bg1 {
+    background-image: url(../images/visual_bg1.png);
+}
+.visual ul li.pop_bg2 {
+    background-image: url(../images/visual_bg2.png);
+}
+.visual ul li strong{
+    font-family: 'Eulyoo1945';
+    font-size: 100px;
+    color: rgba(255,255,255,0.2);
+    margin: 310px 0 0 38px;
+    display: block;
+}
+.visual ul li h2 {
+    font-family: 'Eulyoo1945';
+    font-size: 100px;
+    color: #fff;
+    line-height: 1.1;
+    margin: -58px 0 0 100px;
+}
+.visual ul li p {
+    margin: 19px 0 0 110px;
+}
+.visual .btn_prev,
+.visual .btn_next {
+    position: absolute;/* swiper를 기준으로 정렬 */
+    top:413px;
+    z-index: 10;/* position 속성이 들어간 요소끼리의 순서 - 숫자가 높으면 위*/
+    width: 85px;/*버튼의 크기*/
+    height: 24px;
+    font-size: 0;
+    line-height: 0;
+}
+.visual .btn_prev::before,
+.visual .btn_next::before {
+    position: absolute;/* button을 기준으로 정렬*/
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+}
+.visual .btn_prev {
+    left: 1%;
+}
+.visual .btn_next{
+    right: 1%;
+}
+.visual .btn_next::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='87' height='26' viewBox='0 0 87 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M47.8125 1L85 25H0' stroke='white' stroke-opacity='0.5'/%3E%3C/svg%3E%0A");
+}
+
+.visual .btn_prev::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='87' height='26' viewBox='0 0 87 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M39.1875 1L2 25H87' stroke='white' stroke-opacity='0.5'/%3E%3C/svg%3E%0A");
+}
+
+@media screen and (max-width:1400px){
+        .visual .btn_prev,
+        .visual .btn_next {
+            display: none;/*숨김*/
+        }
+}/*media*/
+
+@media screen and (max-width:640px){
+            .visual ul li {
+                height: 320px;
+            }
+            .visual ul li strong{
+                font-size: 40px;
+                margin: 131px 0 0 0;
+            }
+            .visual ul li h2 {
+                font-size: 40px;
+                margin: -24px 0 0 40px;
+            }
+            .visual ul li p {
+                margin: 4px 0 0 50px;
+            }
+            .visual ul li p br {
+                display: none;
+            }
+}/*media*/
+
+.book .wrapper {
+    position: relative;/*list정렬의 기준*/
+}
+.book {
+    margin: 155px 0 0 0;
+}
+.book .tit {
+    float: left;/*부유요소*/
+}
+.book .tit h2 {
+    font-family: 'Eulyoo1945';
+    font-size: 60px;
+    line-height: 1.2;
+    color: #1d1d1d;
+    margin: 0 0 12px 0;
+}
+.book .list {
+    margin: 0 0 0 321px;
+    width: 1260px;
+}
+.book .list ul li {
+    width: 297px;   
+}
+.book .list ul li a .photo {
+    overflow: hidden;
+    font-size: 0;/*이미지 하단여백삭제*/
+    line-height: 0;
+}
+.book .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;/* 감싸는 요소 photo영역에 이미지 꽉채우기  */
+    transition: 0.5s;
+}
+.book .list ul li a:hover .photo img  {
+    transform: scale3d(1.2,1.2,1);/*가운데를 기준으로 확대*/
+
+}
+.book .list ul li a strong {
+    font-family: 'Eulyoo1945';
+    font-size: 15px;
+    color: #896447;
+    margin: 8px 0 ;
+    display: block;
+}
+.book .list ul li a h3 {
+    /*1줄제한 --block요소이어야함*/
+    font-family: 'Eulyoo1945';
+    font-size: 25px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: -7px 0 15px 0;
+}
+.book .list ul li a span {
+    display: block;
+    color: #666;
+    margin: 12px 0;
+    /*1줄제한 --block요소이어야함*/
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.book .list ul li a p{
+    /*2줄제한*/
+    display: block;
+    line-height: 1.4;
+    height: 2.8em;/*행간x줄수 - 1.4ㅌ2 = 2.8 (단위는 em)*/
+    overflow: hidden;
+}
+.book .more {
+    position: absolute;/*wrapper*/
+    left: 0;
+    top: 216px;
+}
+.book .more a {
+    padding: 9px 81px 9px 14px;
+    border: 1px solid #999;
+    display: block;
+    color: #666;
+    position: relative;/*after 정렬의 기준*/
+}
+.book .more a::after {
+    position: absolute;/* a를 기준으로 정렬*/
+    right: 10px;
+    top: 14px;
+    width: 25px;
+    height: 7px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg width='27' height='9' viewBox='0 0 27 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.0625 1L25 8H-1.04308e-06' stroke='%23666666'/%3E%3C/svg%3E ");
+    content: "";
+}
+.book .more a:hover {
+    border-color: #896447;
+    background-color: #896447;
+    color: #fff;
+} 
+.book .more a:hover::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='27' height='9' viewBox='0 0 27 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.0625 1L25 8H-1.04308e-06' stroke='white'/%3E%3C/svg%3E ");
+}
+@media screen and (max-width:640px){
+            .book {
+                margin: 68px 0 0 0;
+            }
+            .book .tit {
+                float: none;/*float해제*/
+            }
+            .book .tit h2 {
+                font-size: 30px;
+                margin: 0 0 23px 0;
+            }
+            .book .tit h2 br{
+                display: none;/*줄바꿈 제거*/
+            }
+            .book .tit p {
+                display: none;/*숨김*/
+            }
+            .book .list {
+                margin: 0;
+                width:calc(100% + 20px);
+                /*오른쪽wrapper 밖까지 list가 나오게 하기 위해서
+                list한테 100%에 오른쪽 여백 20px를 추가해줌 */
+            }
+            .book .list ul li {
+                width: 180px;
+            }
+            .book .list ul li a strong {
+                font-family: 'Eulyoo1945';
+                font-size: 15px;
+                color: #896447;
+                margin: 8px 0 ;
+                display: block;
+            }
+            .book .list ul li a h3 {
+                font-size: 25px;
+            }
+            .book .list ul li a span {
+                display: none;/*숨김*/
+            }
+            .book .more {
+                position: absolute;/*wrapper*/
+                left: 150px;
+                top: 530px;
+            }
+            .book .more a {
+                padding: 9px 81px 9px 14px;
+                border: 1px solid #999;
+                display: inline-block;
+                color: #666;
+                position: relative;/*after 정렬의 기준*/
+            }
+            .book .more a::after {
+                position: absolute;/* a를 기준으로 정렬*/
+                right: 10px;
+                top: 14px;
+                width: 25px;
+                height: 7px;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: contain;
+                background-image: url("data:image/svg+xml,%3Csvg width='27' height='9' viewBox='0 0 27 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.0625 1L25 8H-1.04308e-06' stroke='%23666666'/%3E%3C/svg%3E ");
+                content: "";
+            }
+            .book .more a:hover {
+                border-color: #896447;
+                background-color: #896447;
+                color: #fff;
+            } 
+            .book .more a:hover::after {
+                background-image: url("data:image/svg+xml,%3Csvg width='27' height='9' viewBox='0 0 27 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.0625 1L25 8H-1.04308e-06' stroke='white'/%3E%3C/svg%3E ");
+            }
+}/*media*/
+
+footer {
+    margin: 200px 0 0 0;
+}
