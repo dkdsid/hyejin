@@ -1,0 +1,55 @@
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+
+.naver h2 {
+    font-size: 30px;
+    margin: 60px 0 20px 0;
+    color: #1D1D1D;
+    font-weight: 700;
+}
+.naver strong {
+    margin: 20px 0 10px 0;
+    color: #07B53B;
+    font-size: 20px;
+    font-weight: 700;
+}
+.naver .btn_wrap {
+    margin: 17px 0 18px 0;
+    display: flex;
+}
+
+.naver p {
+    margin: 10px 0 17px 0;
+}
+
+.naver .btn_wrap a {
+    padding: 9px 43px 8px 47px;
+    border: 1px solid #07B53B;
+    margin-right: 5px;
+    color: #07B53B;
+    display: inline-block;
+}
+.wave {
+    background: url(../images/naver_bg.png) no-repeat center center /cover;
+    color: #fff;
+    text-align: center;
+    padding: 70px 0 70px 0;
+    margin: 70px 0 0 0 ;
+}
+.wave h2 {
+    font-size: 30px;
+    margin:0 0 20px 0;
+    font-weight: 700;
+}
+.wave .btn_wrap {
+    margin: 21px 0 41px 0;
+}
+.wave p {
+    margin: 20px 0 21px 0;
+}
+.wave .btn_wrap a {
+    padding: 9px 43px 8px 47px;
+    border: 1px solid #fff;
+    display: inline-block;
+}
