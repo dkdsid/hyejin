@@ -1,0 +1,69 @@
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+
+.global h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 60px 0 20px 0;
+}
+.global strong {
+    font-size: 20px;
+    font-weight: 700;
+    color: #07B53B;
+    margin: 0 0 10px 0;
+    display: block;
+}
+.global .btn_wrap {
+    margin: 18px 0 40px 0;
+    display: flex;
+}
+.global .btn_wrap a {
+    padding: 9px 44px;
+    border: 1px solid #666666;
+    display: inline-block;
+    margin-right: 5px;
+}
+.global .btn_wrap a.down {
+    border-color: #07B53B;
+    color: #07B53B;
+}
+
+.market {
+    background: url(../images/market_bg.png) no-repeat center center / cover;
+    margin: 70px 0 0 0;
+    padding: 60px 0 70px 0;
+    color: #fff;
+    text-align: center;
+}
+.market h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+}
+.market .btn_wrap {
+    margin: 24px 0 41px 0;
+}
+.market .btn_wrap a {
+    padding: 9px 44px;
+    border: 1px solid #fff;
+    display: inline-block;
+}
+
+
+.global h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 60px 0 20px 0;
+}
+.global strong {
+    font-size: 20px;
+    font-weight: 700;
+    color: #07B53B;
+    margin: 0 0 10px 0;
+    display: block;
+
+}
+.global .btn_wrap {
+    margin: 18px 0 40px 0;
+}
