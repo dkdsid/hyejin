@@ -1,0 +1,127 @@
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+
+.visual h2 {
+    display: none;/* 숨김*/
+}
+.visual ul li {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+.visual ul li .wrapper {
+    height: 950px;
+    padding-bottom: 277px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.visual ul li.bg1 {
+    background-image: url(../images/visual01.png);
+} 
+.visual ul li.bg2 {
+    background-image: url(../images/visual02.png);
+} 
+.visual ul li.bg3 {
+    background-image: url(../images/visual03.png);
+} 
+.visual ul li.bg4 {
+    background-image: url(../images/visual04.png);
+} 
+.visual ul li.bg5 {
+    background-image: url(../images/visual05.png);
+} 
+.visual ul li.bg6 {
+    background-image: url(../images/visual06.png);
+} 
+
+.visual ul li p {
+    font-family: 'LG';
+    font-size: 60px;
+    line-height: 1.1;
+}
+.visual {
+    position: relative;
+}
+.visual .btn_wrap {
+    position: absolute;/* swiper를 기준으로 정렬 */
+    left: 50%; /* 정렬의 기준 swiper 넓이의 왼쪽 절반부터 시작 */
+    transform: translate(-50%, 0);
+    /* btn_wrap 자신의 넓이의 절반만큼 왼쪽으로 이동 -50%  */
+    bottom: 59px;
+    z-index: 10;
+    display: flex;
+    gap: 3px;
+}
+.visual .btn_wrap button {
+    font-size: 0;
+    line-height: 0;
+    width: 28px;
+    height: 28px;
+    position: relative;/* before 정렬의 기준 */
+}
+.visual .btn_wrap button::before {
+    position: absolute;/* button */
+    left: 0;
+    top: 0;
+    width: 100%;/*button 사이즈를 기준으로 100% */
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    content: "";
+}
+.visual .btn_wrap button.btn_prev::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cg id='그룹_129' data-name='그룹 129' transform='translate(-863 -796)'%3E%3Cpath id='arrow_forward_ios_24dp_FILL0_wght400_GRAD0_opsz24_1_' data-name='arrow_forward_ios_24dp_FILL0_wght400_GRAD0_opsz24 (1)' d='M6.121,7.54.288,1.706A.929.929,0,0,1,0,1,1,1,0,0,1,.308.3a.963.963,0,0,1,.7-.3.963.963,0,0,1,.7.3L7.808,6.409a1.589,1.589,0,0,1,0,2.262L1.7,14.782A.917.917,0,0,1,1,15.069a.989.989,0,0,1-.694-.308.982.982,0,0,1,0-1.409Z' transform='translate(880.817 817.37) rotate(180)' fill='%23fff'/%3E%3Cg id='타원_3' data-name='타원 3' transform='translate(891 824) rotate(180)' fill='none' stroke='%23fff' stroke-width='2'%3E%3Ccircle cx='14' cy='14' r='14' stroke='none'/%3E%3Ccircle cx='14' cy='14' r='13' fill='none'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+}
+.visual .btn_wrap button.btn_next::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cg id='그룹_130' data-name='그룹 130' transform='translate(-894 -796)'%3E%3Cpath id='arrow_forward_ios_24dp_FILL0_wght400_GRAD0_opsz24_1_' data-name='arrow_forward_ios_24dp_FILL0_wght400_GRAD0_opsz24 (1)' d='M276.605-852.46l-5.833-5.833a.929.929,0,0,1-.288-.7,1,1,0,0,1,.308-.7.963.963,0,0,1,.7-.3.963.963,0,0,1,.7.3l6.091,6.111a1.586,1.586,0,0,1,.357.536,1.591,1.591,0,0,1,.119.6,1.592,1.592,0,0,1-.119.6,1.585,1.585,0,0,1-.357.536l-6.111,6.111a.917.917,0,0,1-.694.288.989.989,0,0,1-.694-.308.963.963,0,0,1-.3-.7.962.962,0,0,1,.3-.7Z' transform='translate(633.549 1662.3)' fill='%23fff'/%3E%3Cg id='타원_2' data-name='타원 2' transform='translate(894 796)' fill='none' stroke='%23fff' stroke-width='2'%3E%3Ccircle cx='14' cy='14' r='14' stroke='none'/%3E%3Ccircle cx='14' cy='14' r='13' fill='none'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+}
+.visual .btn_wrap button.btn_stop::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cg id='그룹_131' data-name='그룹 131' transform='translate(-926 -796)'%3E%3Cg id='타원_4' data-name='타원 4' transform='translate(926 796)' fill='none' stroke='%23fff' stroke-width='2'%3E%3Ccircle cx='14' cy='14' r='14' stroke='none'/%3E%3Ccircle cx='14' cy='14' r='13' fill='none'/%3E%3C/g%3E%3Cg id='그룹_4' data-name='그룹 4' transform='translate(936.233 804.4)'%3E%3Cline id='선_1' data-name='선 1' y2='10.518' fill='none' stroke='%23fff' stroke-linecap='round' stroke-width='3'/%3E%3Cline id='선_2' data-name='선 2' y2='10.518' transform='translate(6.697)' fill='none' stroke='%23fff' stroke-linecap='round' stroke-width='3'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+}
+.visual .btn_wrap button.btn_play::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cg id='그룹_132' data-name='그룹 132' transform='translate(-957 -796)'%3E%3Cg id='타원_5' data-name='타원 5' transform='translate(957 796)' fill='none' stroke='%23fff' stroke-width='2'%3E%3Ccircle cx='14' cy='14' r='14' stroke='none'/%3E%3Ccircle cx='14' cy='14' r='13' fill='none'/%3E%3C/g%3E%3Cg id='다각형_1' data-name='다각형 1' transform='translate(979 803) rotate(90)' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5.272,2.962a2,2,0,0,1,3.455,0l3.518,6.031A2,2,0,0,1,10.518,12H3.482A2,2,0,0,1,1.755,8.992Z' stroke='none'/%3E%3Cpath d='M 7.000000476837158 3.969268798828125 L 3.482070922851562 9.999999046325684 L 10.51792049407959 9.999999046325684 L 7.000000476837158 3.969268798828125 M 7.000000476837158 1.969271659851074 C 7.670840263366699 1.969271659851074 8.341680526733398 2.300024032592773 8.727560043334961 2.961528778076172 L 12.24548053741455 8.992258071899414 C 13.02325057983398 10.32556915283203 12.06151008605957 11.99999904632568 10.51793098449707 11.99999904632568 L 3.482070922851562 11.99999904632568 C 1.938490867614746 11.99999904632568 0.976750373840332 10.32556915283203 1.754510879516602 8.992258071899414 L 5.272440910339355 2.961528778076172 C 5.658320426940918 2.300024032592773 6.329160690307617 1.969271659851074 7.000000476837158 1.969271659851074 Z' stroke='none' fill='%23fff'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+}
+.visual .btn_wrap button.btn_play {
+    display: none;/* 숨김 */
+}
+@media screen and (max-width:1024px){
+        .visual ul li .wrapper {
+            height: 750px;
+            padding-bottom: 200px;
+        }
+        .visual ul li p {
+            font-size: 40px;
+        }
+}/* media */
+@media screen and (max-width:768px){
+    .visual ul li .wrapper {
+        height: 600px;
+        padding-bottom: 100px;
+    }
+    .visual ul li p {
+        font-size: 30px;
+    }
+    .visual .btn_wrap {
+        display: none;
+    }
+}/* media */
+@media screen and (max-width:640px){
+    .visual ul li .wrapper {
+        height: 450px;
+        padding-bottom: 48px;
+    }
+    .visual ul li p {
+        font-size: 20px;
+        margin: 332px 0 0 0;
+    }
+}
+@media screen and (max-width:475px){
+    .visual ul li p {
+        margin: 300px 0 0 0;
+    }
+}
