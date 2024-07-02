@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--siper 플러그인-->
+    <!--swiper 플러그인-->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
-
+    
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/main.js"></script>
     <link rel="stylesheet" href="css/main.css">
@@ -21,9 +21,9 @@
                 <nav class="gnb">
                     <button class="gnb_open">메뉴열기</button>
                     <div class="gnb_wrap">
-                        <!--1차메뉴(최상위메뉴 - 1depth)
-                            그 하위메뉴는 2차메뉴 2depth
-                            하지만 class 명은 숫자가 먼저 못옴 depth1 -->
+                        <!-- 1차메뉴(최상위메뉴 - 1depth) 
+                            그 하위메뉴는 2차메뉴 2depth 
+                            하지만 class명은 숫자가 먼저 못옴  depth1 -->
                         <ul class="depth1">
                             <li>
                                 <a href="#n">찾습니다</a>
@@ -47,57 +47,198 @@
                     </div>
                     <button class="gnb_close">메뉴닫기</button>
                 </nav>
-                <div class="tnb"></div>
+                <div class="tnb">
+                    <!-- pc에서는 검색 입력이 있고, 모바일에서 검색버튼을 클릭하면 검색창이 나타남 -->
+                    <a href="#n" class="btn_open">검색 페이지 이동</a>
+                    <div class="search">
+                        <form> <!-- form fieldset은 개발자가 삭제할수도 있음 그래서 절대 선택자로 사용X-->
+                            <fieldset>
+                                <div class="search_box">
+                                    <legend>검색어입력</legend>
+                                    <label for="keyword">검색어</label>
+                                    <input type="text" id="keyword" placeholder="검색">
+                                    <input type="submit">
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="link"><a href="http://www.dogcat-e.com/index.php?code=apply" target="_blank" title="새창열림">전단지</a></div>
+                </div>
             </div>
         </header>
         <main class="container">
             <section class="visual">
-                <!--section 태그 안에는 h2~ h6 제목이 반드시 존재해야함
-                   이 section 영역을 대표하는 제목
-                   디자인상 표현되지 않는다면 css에 display: none  숨김-->
+                <!-- section 태그 안에는 h2 ~ h6 제목이 반드시 존재해야함 
+                     이 section 영역을 대표하는 제목
+                     디자인상 표현되지 않는다면 css에 display:none 숨김-->
                 <h2>비쥬얼 팝업</h2>
                 <div class="swiper">
-                    <ul class="swiper-wrapper"> 
+                    <ul class="swiper-wrapper">
                         <li class="swiper-slide bg1">
                             <div class="wrapper">
-                            <p>반려동물,<br>사랑으로 입양하세요<br>여러분의 삶이 행복해집니다.</p>
+                                <p>반려동물,<br>사랑으로 입양하세요<br>여러분의 삶이 행복해집니다.</p>
                             </div>
-                        </li> 
+                        </li>
                         <li class="swiper-slide bg2">
                             <div class="wrapper">
-                            <p>사람과 동물이<br> 새로운 가족으로 만나<br>아름다운 동행이 시작되는 공간입니다.</p>
+                                <p>사람과 동물이 <br>새로운 가족으로 만나<br>아름다운 동행이 시작되는 공간입니다.</p>
                             </div>
-                        </li> 
+                        </li>
                         <li class="swiper-slide bg3">
                             <div class="wrapper">
-                            <p>반려동물, <br>누군가의 가족입니다.</p>
+                                <p>반려동물, <br>누군가의 가족입니다.</p>
                             </div>
-                        </li> 
+                        </li>
                         <li class="swiper-slide bg4">
                             <div class="wrapper">
-                            <p>반려동물, <br>누군가의 가족입니다.</p>
+                                <p>반려동물, <br>누군가의 가족입니다.</p>
                             </div>
-                        </li> 
+                        </li>
                         <li class="swiper-slide bg5">
                             <div class="wrapper">
-                            <p>어느날<br>고양이가 나에게 왔다</p>
-                         </div>
-                        </li> 
+                                <p>어느날 <br>고양이가 나에게 왔다</p>
+                            </div>
+                        </li>
                         <li class="swiper-slide bg6">
                             <div class="wrapper">
-                            <p>사람과 동물이 <br>새로운 가족으로 만나 <br>아름다운 동행이 시작되는 공간입니다.</p>
+                                <p>사람과 동물이 <br>새로운 가족으로 만나 <br>아름다운 동행이 시작되는 공간입니다.</p>
                             </div>
-                        </li> 
+                        </li>
                     </ul>
-                <div class="btn_wrap">
-                    <button class="btn_prev">이전 팝업보기</button>
-                    <button class="btn_next">다음 팝업보기</button>
-                    <button class="btn_stop">일시정지</button>
-                    <button class="btn_play">다시시작</button>
-                </div><!--btn_wrap-->
-                </div><!--siper-->
+                    <div class="btn_wrap">
+                        <button class="btn_prev">이전 팝업보기</button>
+                        <button class="btn_next">다음 팝업보기</button>
+                        <button class="btn_stop">일시정지</button>
+                        <button class="btn_play">다시시작</button>
+                    </div><!--btn_wrap-->
+                </div><!--swiper-->
             </section>
-            <section class="find"></section>
+            <section class="find">
+                <div class="wrapper">
+                    <h2>찾습니다</h2>
+                    <div class="tab">
+                        <ul>
+                            <!--jquery에서 on클래스를 추가할 예정 -->
+                            <li class="find01 on">
+                                <button class="tab_menu">가족을</button>
+                                <div class="tab_detail">
+                                <div class="swiper"> 
+                                    <ul class="swiper-wrapper"> 
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/find01_01.png" alt="동물사진"></div>
+                                                <div class="tit">
+                                                    <strong class="cate01">실종</strong>
+                                                    <h3>아랑이를 애타게 찾습니다</h3>
+                                                </div>
+                                                <p>시츄 / 암컷 / 16살 / 이름(아랑)<br>
+                                                    충청북도 괴산군 승암캠핑장 (2024-06-26)</p>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/find01_02.png" alt="동물사진"></div>
+                                                <div class="tit">
+                                                    <strong class="cate02">종료</strong>
+                                                    <h3>미누를 찾습니다</h3>
+                                                </div>
+                                                <p>코리아 쇼트 헤어 / 수컷 / 4살 / 이름(미누)<br>
+                                                    전라남도 여수시 화정면 (2024-4-12)</p>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/find01_03.png" alt="동물사진"></div>
+                                                <div class="tit">
+                                                    <strong class="cate01">실종</strong>
+                                                    <h3>사랑앵무를 찾습니다</h3>
+                                                </div>
+                                                <p>앵무새 / 성별모름 / 1살 / 이름(둘리)<br>
+                                                    서울특별시 관악구 (2024-5-30)</p>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/find01_04.png" alt="동물사진"></div>
+                                                <div class="tit">
+                                                    <strong class="cate01">실종</strong>
+                                                    <h3>복순이를 찾습니다</h3>
+                                                </div>
+                                                <p>믹스견 / 암컷 / 11살 / 이름(복순이)<br>
+                                                    부산광역시 사하구 (2024-06-22)</p>
+                                            </a>
+                                        </li> 
+                                    </ul>
+                                </div><!--swiper-->   
+                                <div class="btn_wrap">
+                                    <button class="prev">이전 팝업보기</button>
+                                    <button class="next">다음 팝업보기</button>
+                                    <a href="#n" class="more">전체보기</a>
+                                </div>
+                              </div><!--tab_detail-->                          
+                            </li><!--find01-->
+                            <li class="find02 ">
+                                <button class="tab_menu">주인을</button>
+                                <div class="tab_detail">
+                                <div class="swiper"> 
+                                    <ul class="swiper-wrapper"> 
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/find02_01.png" alt="동물사진"></div>
+                                                <div class="tit">
+                                                    <strong class="cate03">구조</strong>
+                                                    <h3>서울특별시</h3>
+                                                </div>
+                                                <p>푸들/미디엄 푸들 / 수컷 / 나이모름<br>
+                                                    서울특별시 강서구 652번 버스 종점</p>
+                                            </a>
+                                        </li> 
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/find02_02.png" alt="동물사진"></div>
+                                                <div class="tit">
+                                                    <strong class="cate04">목격</strong>
+                                                    <h3>대구광역시</h3>
+                                                </div>
+                                                <p>기타묘종 / 성별모름 / 나이모름<br>
+                                                    대구광역시 달서구 대구 달서구 감삼동 293-4</p>
+                                            </a>
+                                        </li> 
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/find02_03.png" alt="동물사진"></div>
+                                                <div class="tit">
+                                                    <strong class="cate03">구조</strong>
+                                                    <h3>충청남도</h3>
+                                                </div>
+                                                <p>기타견종 / 성별모름 / 나이모름<br>
+                                                    충청남도 아산시 풍기동 인정프린스 옆 공터</p>
+                                            </a>
+                                        </li> 
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/find02_04.png" alt="동물사진"></div>
+                                                <div class="tit">
+                                                    <strong class="cate04">목격</strong>
+                                                    <h3>경기도</h3>
+                                                </div>
+                                                <p>조류(오리) / 성별모름 / 나이모름<br>
+                                                    경기도 수원시 권선구 수원아이파크시티</p>
+                                            </a>
+                                        </li> 
+                                    </ul>
+                                </div><!--swiper-->   
+                                <div class="btn_wrap">
+                                    <button class="prev">이전 팝업보기</button>
+                                    <button class="next">다음 팝업보기</button>
+                                    <a href="#n" class="more">전체보기</a>
+                                </div>
+                              </div><!--tab_detail-->                          
+                            </li><!--find-->
+                        </ul>
+                    </div>
+                </div>
+            </section>
             <section class="campaign"></section>
             <section class="family"></section>
         </main>
