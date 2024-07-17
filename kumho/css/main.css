@@ -1,36 +1,372 @@
 @import url(default.css);
 @import url(fonts.css);
 @import url(common.css);
+@import url(layout.css);
 
 .visual h2 {
-    display: none;/* 숨김 */
+    display: none; /* 숨김 */
 }
-
 .visual ul li {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;/*브라우저 높이만큼*/
-    min-height: 450px;/*최소 높이*/
+    height: 100vh; /* 브라우저 높이만큼 */
+    min-height: 450px; /* 최소 높이 */
     color: #fff;
     text-align: center;
 }
 .visual ul li.bg1 {
-    background-image: url(../images/bg1.png);
+    background-image: url(../images/main/visual_bg1.png);
 }
 .visual ul li.bg2 {
-    background-image: url(../images/bg2.png);
+    background-image: url(../images/main/visual_bg2.png);
 }
 .visual ul li.bg3 {
-    background-image: url(../images/bg3.png);
+    background-image: url(../images/main/visual_bg3.png);
 }
 .visual ul li h3 {
     font-size: 50px;
     font-weight: 700;
     line-height: 1.1;
-    margin: 35vh 0 0 0;
+    margin: 30vh 0 0 0;
 }
 .visual ul li p {
     margin: 25px 0 0 0;
     font-size: 20px;
+}
+/*.visual ul li .bar {
+    margin-top: 10px;
+    height: 1px;
+    background-color: rgba(255,255,255,0.2);
+    position: relative;
+}
+.visual ul li .bar::before {
+    position: absolute;
+    left: 0;
+    top: -1px;
+    width: 10%;
+    height: 3px;
+    background-color: rgba(255,255,255,0.7);
+    content: "";
+}
+.visual ul li.swiper-slide-active .bar::before {
+    animation-name: visual_count2;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes visual_count2 {
+    0% { left: 0; }
+    100% { left: 100%; }
+}*/
+.visual .btn_wrap {
+    position: absolute; /* swiper를 기준으로 정렬 */
+    left: 50%;
+    bottom: 7%;
+    transform: translate(-50%, 0);
+    /* 정렬이 되는 기준 swiper의 넓이의 왼쪽 50%부터 (left:50%) 정렬
+       btn_wrap 넓이의 절반을 왼쪽으로 이동 (transform)
+       그럼 가운데 정렬이 됨  */
+    z-index: 10;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+.visual .btn_wrap .paging {
+    width: auto; /* swiper가 준 width:100% 속성 삭제 */
+    display: flex;
+}
+.visual .btn_wrap .paging .swiper-pagination-bullet {
+    /* 현재 선택되지 않은 블릿 */
+    width: 160px;
+    height: 4px;
+    border-radius: 0;
+    background-color: rgba(255,255,255,0.2);
+    opacity: 1;
+    position: relative;
+}
+.visual .btn_wrap .paging .swiper-pagination-bullet-active::before {
+    /* 현재 선택된 블릿 */
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: #fff;
+    content: "";
+    animation-name: visual_count;
+    animation-duration: 5s; /* 5초동안 */
+    animation-iteration-count: 1; /* 1번만 실행 */
+    animation-fill-mode: forwards;
+    /* 애니메이션 종료 후 마지막 유지, 애니메이션 반복 횟수가 제한되었을때 사용 */
+    animation-timing-function: linear;
+}
+@keyframes visual_count {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+.visual .btn_wrap button {
+    width: 20px;
+    height: 20px;
+    font-size: 0;
+    line-height: 0;
+    position: relative; /* before 정렬의 기준 */
+    margin-left: 5px; /* 여백 */
+}
+.visual .btn_wrap button::before {
+    position: absolute; /* button을 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+}
+.visual .btn_wrap button.btn_prev::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='9.5' stroke='white' stroke-opacity='0.6'/%3E%3Cpath d='M7.85774 9.99983L12.2518 14.3939C12.3677 14.5098 12.4242 14.6463 12.4213 14.8033C12.4183 14.9604 12.3588 15.0969 12.2429 15.2128C12.127 15.3287 11.9905 15.3866 11.8334 15.3866C11.6764 15.3866 11.5399 15.3287 11.4239 15.2128L6.9492 10.7469C6.84371 10.6414 6.76555 10.5233 6.7147 10.3924C6.66385 10.2615 6.63843 10.1307 6.63843 9.99983C6.63843 9.86896 6.66385 9.7381 6.7147 9.60724C6.76555 9.47638 6.84371 9.35821 6.9492 9.25272L11.4239 4.77783C11.5399 4.66194 11.6779 4.6055 11.838 4.60851C11.998 4.61153 12.136 4.67098 12.2518 4.78687C12.3677 4.90276 12.4257 5.03926 12.4257 5.19637C12.4257 5.35338 12.3677 5.48983 12.2518 5.60572L7.85774 9.99983Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+.visual .btn_wrap button.btn_stop::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='9.5' stroke='white' stroke-opacity='0.6'/%3E%3Cpath d='M12.0625 14.875C11.7558 14.875 11.4916 14.7642 11.2699 14.5426C11.0483 14.3209 10.9375 14.0568 10.9375 13.75V6.25C10.9375 5.94325 11.0483 5.67906 11.2699 5.45744C11.4916 5.23581 11.7558 5.125 12.0625 5.125H13.75C14.0568 5.125 14.3209 5.23581 14.5426 5.45744C14.7642 5.67906 14.875 5.94325 14.875 6.25V13.75C14.875 14.0568 14.7642 14.3209 14.5426 14.5426C14.3209 14.7642 14.0568 14.875 13.75 14.875H12.0625ZM6.25 14.875C5.94325 14.875 5.67906 14.7642 5.45744 14.5426C5.23581 14.3209 5.125 14.0568 5.125 13.75V6.25C5.125 5.94325 5.23581 5.67906 5.45744 5.45744C5.67906 5.23581 5.94325 5.125 6.25 5.125H7.9375C8.24425 5.125 8.50844 5.23581 8.73006 5.45744C8.95169 5.67906 9.0625 5.94325 9.0625 6.25V13.75C9.0625 14.0568 8.95169 14.3209 8.73006 14.5426C8.50844 14.7642 8.24425 14.875 7.9375 14.875H6.25ZM12.0625 13.75H13.75V6.25H12.0625V13.75ZM6.25 13.75H7.9375V6.25H6.25V13.75Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+.visual .btn_wrap button.btn_play {
+    display: none; /* 현재 play중이라 일시정지버튼만 나옴 */
+}
+.visual .btn_wrap button.btn_play::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='9.5' stroke='white' stroke-opacity='0.6'/%3E%3Cpath d='M7.375 13.333V6.66658C7.375 6.46858 7.44281 6.30608 7.57844 6.17908C7.71394 6.05221 7.87213 5.98877 8.053 5.98877C8.11063 5.98877 8.17019 5.99696 8.23169 6.01333C8.29331 6.02958 8.35294 6.05408 8.41056 6.08683L13.6576 9.42714C13.7606 9.49739 13.8377 9.58152 13.8891 9.67952C13.9406 9.77764 13.9664 9.88439 13.9664 9.99977C13.9664 10.1151 13.9406 10.2219 13.8891 10.32C13.8377 10.418 13.7606 10.5021 13.6576 10.5724L8.41056 13.9127C8.35294 13.9455 8.29331 13.97 8.23169 13.9862C8.17019 14.0026 8.11063 14.0108 8.053 14.0108C7.87213 14.0108 7.71394 13.9473 7.57844 13.8205C7.44281 13.6935 7.375 13.531 7.375 13.333ZM8.5 12.5123L12.4519 9.99977L8.5 7.48727V12.5123Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+.visual .btn_wrap button.btn_next::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='9.5' stroke='white' stroke-opacity='0.6'/%3E%3Cpath d='M13.1423 10.0002L8.74816 5.60607C8.63227 5.49018 8.57578 5.35373 8.5787 5.19672C8.58171 5.0396 8.64116 4.9031 8.75705 4.78722C8.87304 4.67133 9.00954 4.61338 9.16655 4.61338C9.32357 4.61338 9.46007 4.67133 9.57605 4.78722L14.0508 9.25307C14.1563 9.35856 14.2345 9.47673 14.2853 9.60759C14.3361 9.73845 14.3616 9.86931 14.3616 10.0002C14.3616 10.131 14.3361 10.2619 14.2853 10.3928C14.2345 10.5236 14.1563 10.6418 14.0508 10.7473L9.57605 15.2222C9.46006 15.3381 9.32206 15.3945 9.16203 15.3915C9.002 15.3885 8.86404 15.329 8.74816 15.2131C8.63227 15.0972 8.57432 14.9607 8.57432 14.8036C8.57432 14.6466 8.63227 14.5102 8.74816 14.3943L13.1423 10.0002Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+
+@media screen and (max-width:1300px){
+
+}
+@media screen and (max-width:1024px){
+}
+@media screen and (max-width:768px){ /* 모바일 디자인적용 */
+    .visual ul li {
+        height: 450px; /* 브라우저 높이만큼 */
+        min-height: auto; /* 최소 높이 */
+    }
+    .visual ul li h3 {
+        font-size: 25px;
+        margin: 136px 0 0 0;
+    }
+    .visual ul li h3 br.m_skip {
+        display: none; /* 줄바꿈 제거 */
+    }
+    .visual ul li p {
+        margin: 12px 0 0 0;
+        font-size: 13px;
+    }
+    .visual .btn_wrap .paging .swiper-pagination-bullet {
+        width: 70px;
+        height: 3px;
+    }
+    .visual .btn_wrap button.btn_prev {
+        display: none;
+    }
+    .visual .btn_wrap button.btn_next {
+        display: none;
+    }
+}
+@media screen and (max-width:500px){
+}
+
+.biz .tit h2 {
+    font-size: 20px;
+    color: #EA141D;
+    font-weight: 700;
+    margin: 127px 0 0 0;
+}
+.biz .tit h2 span {
+    position: relative;/* after 정렬의 기준 */
+}
+.biz .tit h2 span::after {
+    position: absolute;
+    right: -16px;
+    top: -13px;
+    width: 20px;
+    height: 20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 7.94658C0 8.22303 0.0402151 8.50953 0.150823 8.78095C0.638506 9.98726 1.88034 10.7312 3.45902 10.1029C3.83609 9.95208 14.2785 5.74506 14.2785 5.74506C14.2785 5.74506 10.1659 16.1696 10.01 16.5566C9.41176 18.0495 10.1307 19.4015 11.3524 19.8539C11.6239 19.9544 11.9055 20.0047 12.182 19.9997C13.1825 19.9946 14.0623 19.4066 14.4947 18.2304C14.5601 18.0545 19.7034 3.93559 19.814 3.59883C19.8793 3.39778 20 2.92531 20 2.5986C20 1.89994 19.7436 1.2415 19.2459 0.743893C18.7582 0.251315 18.1046 0 17.4158 0C17.0789 0 16.8074 0.0603156 16.3952 0.190999C16.1488 0.27142 2.8909 5.20222 1.75968 5.62443C0.628457 6.04664 -2.76166e-06 6.95138 0.00502489 7.94658' fill='%23ED1C24'/%3E%3C/svg%3E%0A");
+    content: "";
+}
+.biz .tit p {
+    font-size: 45px;
+    color: #1d1d1d;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 4px 0 50px 0;
+}
+.biz .list ul {
+    display: flex;
+}
+.biz .list ul li {
+    width: 25%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    position: relative;/* before 정렬의 기준 */
+    transition: 0.5s;
+}
+.biz .list ul li.biz1 {
+    background-image: url(../images/main/biz1.png);
+}
+.biz .list ul li.biz2 {
+    background-image: url(../images/main/biz2.png);
+}
+.biz .list ul li.biz3 {
+    background-image: url(../images/main/biz3.png);
+}
+.biz .list ul li.biz4 {
+    background-image: url(../images/main/biz4.png);
+}
+.biz .list ul li::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.2;
+    content: "";
+}
+.biz .list ul li a {
+    display: block;
+    height: 690px;
+    position: relative;
+    z-index: 10;
+    /*  
+        <li>
+        ;:before --li::before (position 값이 있음)
+        <a></a>
+        <li>
+
+        --li의 before가  position값이 있으면 a보다 더 위에 배치
+        a를 before위에 배치하려면
+        a position값을 주고 z-index를 줌
+     */
+}
+.biz .list ul li a .inner {
+    /* a를 기준으로 정렬
+    마우스를 오버했을때 효과를 부드럽게 주기 위해 absolute */
+    position: absolute;
+    left: 5%;
+    bottom: 43px;
+    width: 90%;
+    transition: 0.5s;
+}
+.biz .list ul li a .inner strong {
+    font-weight: 700;
+    display: block;
+}
+.biz .list ul li a .inner h3 {
+    font-size: 35px;
+    line-height: 1.1;
+    margin: 0 0 12px 0;
+    transition: 0.5s;
+}
+.biz .list ul li a .inner p {
+    opacity: 0;
+    transition: 0.5s;
+}
+/* 하나의 li에 오버했을때 */
+.biz .list ul li.on {
+    width: 60%;
+}
+.biz .list ul li.off {
+    /*width: 16%;*/
+    /* 16*3 = 48 + 52 = 100 */
+}
+.biz .list ul li.on::before {
+    opacity: 0;
+}
+.biz .list ul li.off::before {
+    opacity: 0.4;
+}
+.biz .list ul li.off a {
+    opacity: 0.8;/* a안에 있는 모든 요소가 opacity 0.8 */
+}
+.biz .list ul li.on a .inner {
+    bottom: 75px;
+}
+.biz .list ul li.on a .inner h3 {
+    font-size: 45px;
+    font-weight: 700;
+}
+.biz .list ul li.on a .inner p {
+    opacity: 1;
+}
+@media screen and (max-width:1300px){
+        .biz .tit p {
+            font-size: 35px;
+        }
+        .biz .list ul li a .inner h3 {
+            font-size: 30px;
+        }
+        .biz .list ul li.on a .inner h3 {
+            font-size: 35px;
+        }
+}
+@media screen and (max-width:1024px){
+    .biz .tit h2 {
+        font-size: 18px;
+    }
+    .biz .tit p {
+        font-size: 30px;
+    }
+        .biz .list {
+            overflow-x: auto;
+            /* list 의 넓이보다 ul의 넓이가 더 넓으면
+                가로스크롤바를 생성 - 스크롤 허용 */
+        }
+        .biz .list ul {
+            margin: 0 20px;
+            gap: 16px;
+            width: 1048px;
+            /* 
+                ul의 넓이 안에서 li의 무조건 한ㅇ줄로 표현 - flex
+                flex로 좌우로 배치 - 하지만 반드시 li의 넓이를
+                유비하려면 ul의 넓이를 늘림
+
+                li한개 넓이 250px * 4 = 1000px
+                사이 여백 16px *3 = 48px
+                1000 + 48 =1048px
+            */
+        }
+        .biz .list ul li {
+            width: 250px;
+        }
+        .biz .list ul li a {
+            height: 319px;
+        }
+        .biz .list ul li a .inner h3 {
+            font-size: 27px;
+        }
+}
+@media screen and (max-width:768px){
+    .biz .tit p {
+        font-size: 25px;
+    }
+
+}
+@media screen and (max-width:500px){
+    .biz .tit h2 span {
+        position: relative;
+    }
+    .biz .list ul li a .inner h3 {
+        font-size: 20px;
+    }
+    .biz .tit h2 {
+        font-size: 20px;
+        color: #EA141D;
+        font-weight: 700;
+        margin: 90px 0 0 0;
+    }
 }

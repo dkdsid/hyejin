@@ -1,11 +1,12 @@
 
 /* 글자의 스타일은 상속받음. 기본글자의 스타일은 
 모든 태그를 감싸는 html body에 선언 
-폰트를 여러개를 선언 첫번째 폰트를 1순위로 적용 만약 지원이 안되면 2순위 폰트를 적용
+폰트를 여러개를 선언... 첫번째 폰트를 1순위로 적용.. 만약 지원이 안되면 2순위 폰트를 적용
 영문만 지원하는 폰트를 1순위로 쓰고 2순위로 한글이 지원되는 서체를 선언
-영문, 숫자, 특수문자는 영문폰트가 적용, 나머지 한글은 한글 폰트 적용*/
+영문,순자,특수문자는 영문 폰트가 적용, 나머지 한글은 한글 폰트 적용
+*/
 html, body {
-    font-family: "Montserrat","Pretendard",  "Malgun Gothic", "맑은 고딕", Dotum, 돋움, Helvetica, "Apple SD Gothic Neo", "애플 SD 산돌고딕 Neo","sans-serif",;
+    font-family: "Montserrat", "Pretendard", "Malgun Gothic", "맑은 고딕", Dotum, 돋움, Helvetica, "Apple SD Gothic Neo", "애플 SD 산돌고딕 Neo", sans-serif;
     font-weight: 400;
     font-size: 15px;
     letter-spacing: 0; /* 자간 */

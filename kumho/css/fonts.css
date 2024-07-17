@@ -9,5 +9,5 @@
     font-family: 'Pretendard';
     font-weight: 700;
     font-display: swap;
-    src: local('Pretendard Bold'), url(../fonts/Pretendard-ExtraBold.woff2) format('woff2'), url(../fonts/Pretendard-ExtraBold.woff) format('woff');
+    src: local('Pretendard ExtraBold'), url(../fonts/Pretendard-ExtraBold.woff2) format('woff2'), url(../fonts/Pretendard-ExtraBold.woff) format('woff');
 }
