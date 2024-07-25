@@ -32,7 +32,7 @@ $(document).ready(function(){
         resize_chk()
     })//$(window).resize
 
-    $('header').on('mouseenter', function(){
+    $('header').on('mouseenter focusin', function(){
         $(this).addClass('fixed')
     })
     $('header').on('mouseleave', function(){
@@ -56,7 +56,7 @@ $(document).ready(function(){
         scroll_chk()
     })
 
-    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter', function(){
+    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin', function(){
         if(pc_mobile == 'pc'){
             $('header').addClass('menu_over')
             $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('on')
@@ -69,6 +69,13 @@ $(document).ready(function(){
             $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('on')
         }
     })
+    $('header .gnb .gnb_wrap ul.depth1 > li:last-child > ul.depth2 > li:last-child > a').on('focusout', function(){
+        if(pc_mobile == 'pc'){
+            $('header').removeClass('menu_over')
+            $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('on')
+        }
+    })
+    
 
     /* 
         모바일 메뉴를 클릭하면 
@@ -98,6 +105,24 @@ $(document).ready(function(){
     $('header .gnb .gnb_close').on('click', function(){
         $('header').removeClass('menu_open')
         $("html, body").css({overflow : "visible", height : "auto"}).unbind('scroll touchmove mousewheel');
+    })
+
+    /*  
+        footer .family_site .family_open 을 클릭하면
+        1. footer .family_site에 open클래스 추가
+        2. footer .family_site ul을 열어줌
+
+        footer .family_site .family_close 를 클릭하면
+        1. footer .family_site에 open클래스 삭제
+        2. footer .family_site ul을 닫아줌
+    */
+    $('footer .family_site .family_open').on('click', function(){
+        $('footer .family_site').addClass('open')
+        $('footer .family_site ul').slideDown()
+    })
+    $('footer .family_site .family_close').on('click', function(){
+        $('footer .family_site').removeClass('open')
+        $('footer .family_site ul').slideUp()
     })
     
 })//document.ready
